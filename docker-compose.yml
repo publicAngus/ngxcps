@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  ngxserver:
+    image: nginx:latest
+    ports: 
+     - 443:443
+    volumes:
+     - ./:/ngxhost
+    command:
+     [nginx,'-p','/ngxhost','-c', 'nginx.conf','-g','daemon off;'] 
